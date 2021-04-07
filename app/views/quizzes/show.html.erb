@@ -1,0 +1,13 @@
+<%= @quiz.title %>
+<ul>
+  <% @quiz.questions.each do |q| %>
+    <li>
+      <%= q.question %>
+      <ul>
+        <% q.options.each do |option| %>
+          <li><%= option.answer %> - <%= option.is_correct %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
