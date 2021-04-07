@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_155019) do
+ActiveRecord::Schema.define(version: 2021_04_07_163506) do
+
+  create_table "options", force: :cascade do |t|
+    t.string "answer"
+    t.integer "question_id", null: false
+    t.boolean "is_correct"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_options_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+    t.integer "quiz_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +47,6 @@ ActiveRecord::Schema.define(version: 2021_04_07_155019) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "options", "questions"
+  add_foreign_key "questions", "quizzes"
 end
