@@ -5,6 +5,13 @@ User can play quizzes and get its score for each.
 
 [S-test demo](https://s-test-cn.herokuapp.com/)
 
+### Technologies
+
+Project is created with:
+
+-   Ruby: 2.6.5
+-   Rails: 6.1.3.1
+
 
 ### Clone the repository
 
