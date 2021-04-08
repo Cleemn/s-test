@@ -1,11 +1,17 @@
 <% @quizzes.each do |quiz| %>
-  <h2><%= link_to quiz.title, quiz_question_path(quiz, 1) %></h2>
-  <p><%= quiz.score(quiz) %> %</p>
-  <% @scores.each do |s| %>
-    <% if s.quiz_id === quiz.id %>
-      <li>
-        Answer: <%= s.answer %>
-      </li>
+  <% if quiz.questions.count > 0 %>
+    <h2><%= link_to quiz.title, quiz_question_path(quiz, quiz.questions.first) %></h2>
+    <% if quiz.score(quiz) > 60 %>
+      <p><%= quiz.score(quiz) %> %  - Success</p>
+    <% else %>
+      <p><%= quiz.score(quiz) %> %  - Fail</p>
+    <% end %>
+    <% @scores.each do |s| %>
+      <% if s.quiz_id === quiz.id %>
+        <li>
+          Answer: <%= s.answer %>
+        </li>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

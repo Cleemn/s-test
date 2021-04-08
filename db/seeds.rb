@@ -13,7 +13,7 @@ p 'Generating users'
     email: Faker::Internet.email,
     password: "coucou"
   )
-  users.save!
+  users.save
 end
 
 p 'Generating quizzes'
@@ -22,7 +22,7 @@ p 'Generating quizzes'
   quizzes = Quiz.new(
     title: Faker::Educator.course_name
   )
-  quizzes.save!
+  quizzes.save
 end
 
 p 'Generating questions'
@@ -30,34 +30,243 @@ p 'Generating questions'
 quizzes = Quiz.all
 
 quizzes.each_with_index do |quiz, index|
-  4.times do
-    questions = Question.new(
-      question: Faker::Lorem.question,
-      quiz_id: quiz.id
-    )
-    questions.save!
-  end
+
 end
 
 p 'Generating answers'
 
-questions = Question.all
+# questions = Question.all
 
-questions.each do |question|
-  3.times do
-    options = Option.new(
-      answer: Faker::Lorem.sentence,
-      question_id: question.id,
-      is_correct: false
-    )
-    options.save!
-  end
-  1.times do
-    correct_option = Option.new(
-      answer: Faker::Lorem.sentence,
-      question_id: question.id,
-      is_correct: true
-    )
-    correct_option.save!
-  end
-end
+# questions.each do |question|
+#   1.times do
+#     correct_option = Option.new(
+#       answer: Faker::Lorem.sentence,
+#       question_id: question.id,
+#       is_correct: true
+#     )
+#     correct_option.save
+#   end
+#   5.times do
+#     options = Option.new(
+#       answer: Faker::Lorem.sentence,
+#       question_id: question.id,
+#       is_correct: false
+#     )
+#     options.save
+#   end
+# end
+
+question1 = Question.new(
+  question: "Quelle est la racine carrée de 36 ?",
+  quiz_id: 1
+)
+question1.save
+question2 = Question.new(
+  question: "Quel département français a pour chef-lieu Bordeaux ?",
+  quiz_id: 1
+)
+question2.save
+question3 = Question.new(
+  question: "Qu'est pour moi le père de mon père ?",
+  quiz_id: 1
+)
+question3.save
+question4 = Question.new(
+  question: "Combien de voleurs accompagnaient Ali Baba ?",
+  quiz_id: 1
+)
+question4.save
+
+option1 = Option.new(
+  answer: "6",
+  question_id: 1,
+  is_correct: true
+)
+option1.save
+option2 = Option.new(
+  answer: "9",
+  question_id: 1,
+  is_correct: false
+)
+option2.save
+option3 = Option.new(
+  answer: "12",
+  question_id: 1,
+  is_correct: false
+)
+option3.save
+
+option4 = Option.new(
+  answer: "18",
+  question_id: 1,
+  is_correct: false
+)
+option4.save
+
+option5 = Option.new(
+  answer: "Landes",
+  question_id: 2,
+  is_correct: false
+)
+option5.save
+option6 = Option.new(
+  answer: "Mayenne",
+  question_id: 2,
+  is_correct: false
+)
+option6.save
+option7 = Option.new(
+  answer: "Gironde",
+  question_id: 2,
+  is_correct: true
+)
+option7.save
+option8 = Option.new(
+  answer: "Ardèche",
+  question_id: 2,
+  is_correct: false
+)
+option8.save
+
+option9 = Option.new(
+  answer: "Mon oncle",
+  question_id: 3,
+  is_correct: true
+)
+option9.save
+option10 = Option.new(
+  answer: "Mon frère",
+  question_id: 3,
+  is_correct: false
+)
+option10.save
+option11 = Option.new(
+  answer: "Mon neveu",
+  question_id: 3,
+  is_correct: false
+)
+option11.save
+option12 = Option.new(
+  answer: "Mon grand-père",
+  question_id: 3,
+  is_correct: false
+)
+option12.save
+
+option13 = Option.new(
+  answer: "12",
+  question_id: 2,
+  is_correct: false
+)
+option13.save
+option14 = Option.new(
+  answer: "40",
+  question_id: 2,
+  is_correct: true
+)
+option14.save
+option15 = Option.new(
+  answer: "1000",
+  question_id: 1,
+  is_correct: false
+)
+option15.save
+option16 = Option.new(
+  answer: "10000",
+  question_id: 1,
+  is_correct: false
+)
+option16.save
+
+question5 = Question.new(
+  question: "Lequel de ces nombres est un nombre premier ?",
+  quiz_id: 2
+)
+question5.save
+question6 = Question.new(
+  question: "Combien d'années compte-t-on dans une décennie ?",
+  quiz_id: 2
+)
+question6.save
+question7 = Question.new(
+  question: "Lequel de ces termes est synonyme de joyeux ?",
+  quiz_id: 2
+)
+question7.save
+
+
+option20 = Option.new(
+  answer: "13",
+  question_id: 4,
+  is_correct: true
+)
+option20.save
+option21 = Option.new(
+  answer: "25",
+  question_id: 4,
+  is_correct: false
+)
+option21.save
+option22 = Option.new(
+  answer: "32",
+  question_id: 4,
+  is_correct: false
+)
+option22.save
+
+option23 = Option.new(
+  answer: "33",
+  question_id: 4,
+  is_correct: false
+)
+option23.save
+
+option24 = Option.new(
+  answer: "Gai",
+  question_id: 6,
+  is_correct: true
+)
+option24.save
+option25 = Option.new(
+  answer: "Bouleversé",
+  question_id: 6,
+  is_correct: false
+)
+option25.save
+option26 = Option.new(
+  answer: "Désolé",
+  question_id: 6,
+  is_correct: false
+)
+option26.save
+option27 = Option.new(
+  answer: "Navré",
+  question_id: 6,
+  is_correct: false
+)
+option27.save
+
+option28 = Option.new(
+  answer: "1",
+  question_id: 5,
+  is_correct: false
+)
+option28.save
+option29 = Option.new(
+  answer: "10",
+  question_id: 5,
+  is_correct: true
+)
+option29.save
+option30 = Option.new(
+  answer: "12",
+  question_id: 5,
+  is_correct: false
+)
+option30.save
+option31 = Option.new(
+  answer: "100",
+  question_id: 5,
+  is_correct: false
+)
+option31.save

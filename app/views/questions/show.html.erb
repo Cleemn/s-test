@@ -1,13 +1,9 @@
 <%= @question.question %>
-<%= simple_form_for :answer do  |f| %>
+<%= simple_form_for :answer do |f| %>
   <%= f.select :answer, Option.all.select{ |o| o.question_id === @question.id }.map{ |r| r.answer }  %>
   <%= f.button :submit %>
 <% end %>
 
-<% if @last_question >= 1 %>
-  <%= link_to "Question précédente", quiz_question_path(params[:quiz_id], @last_question) %>
-<% end %>
-
-<% if @next_question <= 4 %>
-  <%= link_to "Question suivante", quiz_question_path(params[:quiz_id], @next_question) %>
+<% @question.answers.each do |a| %>
+  <%= a.answer %>
 <% end %>
