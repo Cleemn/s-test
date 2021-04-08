@@ -270,3 +270,66 @@ option31 = Option.new(
   is_correct: false
 )
 option31.save
+
+question8 = Question.new(
+  question: "Quel âge a un enfant de 18 mois ?",
+  quiz_id: 3
+)
+question8.save
+question9 = Question.new(
+  question: "Combien compte-t-on de jours durant le mois de juillet ?",
+  quiz_id: 3
+)
+question9.save
+
+
+option40 = Option.new(
+  answer: "1 an",
+  question_id: 7,
+  is_correct: false
+)
+option40.save
+option41 = Option.new(
+  answer: "1 an et demi",
+  question_id: 7,
+  is_correct: true
+)
+option41.save
+option42 = Option.new(
+  answer: "2 ans",
+  question_id: 7,
+  is_correct: false
+)
+option42.save
+
+option43 = Option.new(
+  answer: "3 ans",
+  question_id: 7,
+  is_correct: false
+)
+option43.save
+
+option44 = Option.new(
+  answer: "28",
+  question_id: 8,
+  is_correct: false
+)
+option44.save
+option45 = Option.new(
+  answer: "29",
+  question_id: 8,
+  is_correct: false
+)
+option45.save
+option46 = Option.new(
+  answer: "30",
+  question_id: 8,
+  is_correct: false
+)
+option46.save
+option47 = Option.new(
+  answer: "31",
+  question_id: 8,
+  is_correct: true
+)
+option47.save

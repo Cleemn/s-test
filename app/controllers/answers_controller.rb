@@ -8,6 +8,7 @@ class AnswersController < ApplicationController
     @answer.question_id = params[:id].to_i
     @answer.quiz_id = params[:quiz_id].to_i
     @answer.save
+    
     if Question.find_by(id: @answer.question_id + 1, quiz_id: params[:quiz_id].to_i)
       redirect_to quiz_question_path(@answer.quiz_id, @answer.question_id + 1)
     else

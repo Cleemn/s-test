@@ -1,9 +1,15 @@
-<%= @question.question %>
-<%= simple_form_for :answer do |f| %>
-  <%= f.select :answer, Option.all.select{ |o| o.question_id === @question.id }.map{ |r| r.answer }  %>
-  <%= f.button :submit %>
-<% end %>
+<div class="m-4">
+  <h3><%= @question.question %></h3>
+  <%= simple_form_for :answer do |f| %>
+    <%= f.input :answer, collection: Option.all.select{ |o| o.question_id === @question.id }.map{ |r| r.answer }, as: :radio_buttons, :label => "Réponse", input_html: { required: true } %>
+    <%= f.button :submit, value: 'Valider la réponse', class: "btn btn-primary" %>
+  <% end %>
 
-<% @question.answers.each do |a| %>
-  <%= a.answer %>
-<% end %>
+  <div class="my-4">
+    <% if @question.answers.count > 0 %>
+      <% @question.answers.each do |a| %>
+        <p>Ma réponse précédente : <%= a.answer %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

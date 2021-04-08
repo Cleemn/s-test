@@ -10,7 +10,9 @@ class Quiz < ApplicationRecord
 
     @quiz_scores.each do |s|
       @choosen_option = Option.find_by(answer: s.answer)
-      if @choosen_option.is_correct === true
+      if @choosen_option.answer.empty?
+        redirect_to root_path
+      elsif @choosen_option.is_correct === true
         @passed += (100.to_f/@questions)
       end
     end
