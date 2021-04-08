@@ -1,5 +1,37 @@
 ## Setup
- TO BE COMPLETED
+
+This is a Rails quiz application. User can log in and sign up.
+User can play quizzes and get its score for each.
+
+[S-test demo](https://s-test-cn.herokuapp.com/)
+
+
+### Clone the repository
+
+```shell
+$ git clone git@github.com:Cleemn/s-test.git
+$ cd s-test
+```
+
+### Install dependencies
+
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+
+```shell
+$ bundle && yarn
+```
+
+### Initialize the database
+
+```shell
+$ rails db:create db:migrate db:seed
+```
+
+### Serve
+
+```shell
+$ rails s
+```
 
 ## Guidelines
 - Fork this repository
