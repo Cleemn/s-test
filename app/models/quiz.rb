@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Quiz < ApplicationRecord
   has_many :questions
 
@@ -12,8 +14,8 @@ class Quiz < ApplicationRecord
       @choosen_option = Option.find_by(answer: s.answer)
       if @choosen_option.answer.empty?
         redirect_to root_path
-      elsif @choosen_option.is_correct === true
-        @passed += (100.to_f/@questions)
+      elsif @choosen_option.is_correct.equal?(true)
+        @passed += (100.to_f / @questions)
       end
     end
     @passed.round

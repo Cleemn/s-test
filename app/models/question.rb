@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Question < ApplicationRecord
   belongs_to :quiz
   has_many :options
@@ -7,7 +9,7 @@ class Question < ApplicationRecord
   private
 
   def validate_quota
-    self.quiz.questions.count < 3 === true
-    errors.add("Too many questions") if quiz.questions.count >= 3
+    (quiz.questions.count < 3).equal?(true)
+    errors.add('Too many questions') if quiz.questions.count >= 3
   end
 end

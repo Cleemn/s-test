@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -11,7 +13,7 @@ p 'Generating users'
 4.times do
   users = User.new(
     email: Faker::Internet.email,
-    password: "coucou"
+    password: 'coucou'
   )
   users.save
 end
@@ -27,42 +29,15 @@ end
 
 p 'Generating questions'
 
-quizzes = Quiz.all
-
-quizzes.each_with_index do |quiz, index|
-
-end
-
 p 'Generating answers'
 
-# questions = Question.all
-
-# questions.each do |question|
-#   1.times do
-#     correct_option = Option.new(
-#       answer: Faker::Lorem.sentence,
-#       question_id: question.id,
-#       is_correct: true
-#     )
-#     correct_option.save
-#   end
-#   5.times do
-#     options = Option.new(
-#       answer: Faker::Lorem.sentence,
-#       question_id: question.id,
-#       is_correct: false
-#     )
-#     options.save
-#   end
-# end
-
 question1 = Question.new(
-  question: "Quelle est la racine carrée de 36 ?",
+  question: 'Quelle est la racine carrée de 36 ?',
   quiz_id: 1
 )
 question1.save
 question2 = Question.new(
-  question: "Quel département français a pour chef-lieu Bordeaux ?",
+  question: 'Quel département français a pour chef-lieu Bordeaux ?',
   quiz_id: 1
 )
 question2.save
@@ -71,86 +46,90 @@ question3 = Question.new(
   quiz_id: 1
 )
 question3.save
+question = Question.new(
+  question: 'Combien font 8*6 ?',
+  quiz_id: 1
+)
+question.save
 
 option1 = Option.new(
-  answer: "6",
+  answer: '6',
   question_id: 1,
   is_correct: true
 )
 option1.save
 option2 = Option.new(
-  answer: "9",
+  answer: '9',
   question_id: 1,
   is_correct: true
 )
 option2.save
 option3 = Option.new(
-  answer: "12",
+  answer: '12',
   question_id: 1,
   is_correct: false
 )
 option3.save
 
 option4 = Option.new(
-  answer: "18",
+  answer: '18',
   question_id: 1,
   is_correct: false
 )
 option4.save
 
 option5 = Option.new(
-  answer: "Landes",
+  answer: 'Landes',
   question_id: 2,
   is_correct: false
 )
 option5.save
 option6 = Option.new(
-  answer: "Mayenne",
+  answer: 'Mayenne',
   question_id: 2,
   is_correct: false
 )
 option6.save
 option7 = Option.new(
-  answer: "Gironde",
+  answer: 'Gironde',
   question_id: 2,
   is_correct: true
 )
 option7.save
 option8 = Option.new(
-  answer: "Ardèche",
+  answer: 'Ardèche',
   question_id: 2,
   is_correct: false
 )
 option8.save
 
 option9 = Option.new(
-  answer: "Mon oncle",
+  answer: 'Mon oncle',
   question_id: 3,
   is_correct: true
 )
 option9.save
 option10 = Option.new(
-  answer: "Mon frère",
+  answer: 'Mon frère',
   question_id: 3,
   is_correct: false
 )
 option10.save
 option11 = Option.new(
-  answer: "Mon neveu",
+  answer: 'Mon neveu',
   question_id: 3,
   is_correct: false
 )
 option11.save
 option12 = Option.new(
-  answer: "Mon grand-père",
+  answer: 'Mon grand-père',
   question_id: 3,
   is_correct: false
 )
 option12.save
 
-
 question5 = Question.new(
-  question: "Lequel de ces nombres est un nombre premier ?",
+  question: 'Lequel de ces nombres est un nombre premier ?',
   quiz_id: 2
 )
 question5.save
@@ -160,146 +139,144 @@ question6 = Question.new(
 )
 question6.save
 question7 = Question.new(
-  question: "Lequel de ces termes est synonyme de joyeux ?",
+  question: 'Lequel de ces termes est synonyme de joyeux ?',
   quiz_id: 2
 )
 question7.save
 
-
 option20 = Option.new(
-  answer: "13",
+  answer: '13',
   question_id: 4,
   is_correct: true
 )
 option20.save
 option21 = Option.new(
-  answer: "25",
+  answer: '25',
   question_id: 4,
   is_correct: false
 )
 option21.save
 option22 = Option.new(
-  answer: "32",
+  answer: '32',
   question_id: 4,
   is_correct: false
 )
 option22.save
 
 option23 = Option.new(
-  answer: "33",
+  answer: '33',
   question_id: 4,
   is_correct: false
 )
 option23.save
 
 option24 = Option.new(
-  answer: "Gai",
+  answer: 'Gai',
   question_id: 6,
   is_correct: true
 )
 option24.save
 option25 = Option.new(
-  answer: "Bouleversé",
+  answer: 'Bouleversé',
   question_id: 6,
   is_correct: false
 )
 option25.save
 option26 = Option.new(
-  answer: "Désolé",
+  answer: 'Désolé',
   question_id: 6,
   is_correct: false
 )
 option26.save
 option27 = Option.new(
-  answer: "Navré",
+  answer: 'Navré',
   question_id: 6,
   is_correct: false
 )
 option27.save
 
 option28 = Option.new(
-  answer: "1",
+  answer: '1',
   question_id: 5,
   is_correct: false
 )
 option28.save
 option29 = Option.new(
-  answer: "10",
+  answer: '10',
   question_id: 5,
   is_correct: true
 )
 option29.save
 option30 = Option.new(
-  answer: "12",
+  answer: '12',
   question_id: 5,
   is_correct: false
 )
 option30.save
 option31 = Option.new(
-  answer: "100",
+  answer: '100',
   question_id: 5,
   is_correct: false
 )
 option31.save
 
 question8 = Question.new(
-  question: "Quel âge a un enfant de 18 mois ?",
+  question: 'Quel âge a un enfant de 18 mois ?',
   quiz_id: 3
 )
 question8.save
 question9 = Question.new(
-  question: "Combien compte-t-on de jours durant le mois de juillet ?",
+  question: 'Combien compte-t-on de jours durant le mois de juillet ?',
   quiz_id: 3
 )
 question9.save
 
-
 option40 = Option.new(
-  answer: "1 an",
+  answer: '1 an',
   question_id: 7,
   is_correct: false
 )
 option40.save
 option41 = Option.new(
-  answer: "1 an et demi",
+  answer: '1 an et demi',
   question_id: 7,
   is_correct: true
 )
 option41.save
 option42 = Option.new(
-  answer: "2 ans",
+  answer: '2 ans',
   question_id: 7,
   is_correct: false
 )
 option42.save
 
 option43 = Option.new(
-  answer: "3 ans",
+  answer: '3 ans',
   question_id: 7,
   is_correct: false
 )
 option43.save
 
 option44 = Option.new(
-  answer: "28",
+  answer: '28',
   question_id: 8,
   is_correct: false
 )
 option44.save
 option45 = Option.new(
-  answer: "29",
+  answer: '29',
   question_id: 8,
   is_correct: false
 )
 option45.save
 option46 = Option.new(
-  answer: "30",
+  answer: '30',
   question_id: 8,
   is_correct: false
 )
 option46.save
 option47 = Option.new(
-  answer: "31",
+  answer: '31',
   question_id: 8,
   is_correct: true
 )
