@@ -71,11 +71,6 @@ question3 = Question.new(
   quiz_id: 1
 )
 question3.save
-question4 = Question.new(
-  question: "Combien de voleurs accompagnaient Ali Baba ?",
-  quiz_id: 1
-)
-question4.save
 
 option1 = Option.new(
   answer: "6",
@@ -86,7 +81,7 @@ option1.save
 option2 = Option.new(
   answer: "9",
   question_id: 1,
-  is_correct: false
+  is_correct: true
 )
 option2.save
 option3 = Option.new(
@@ -153,30 +148,6 @@ option12 = Option.new(
 )
 option12.save
 
-option13 = Option.new(
-  answer: "12",
-  question_id: 2,
-  is_correct: false
-)
-option13.save
-option14 = Option.new(
-  answer: "40",
-  question_id: 2,
-  is_correct: true
-)
-option14.save
-option15 = Option.new(
-  answer: "1000",
-  question_id: 1,
-  is_correct: false
-)
-option15.save
-option16 = Option.new(
-  answer: "10000",
-  question_id: 1,
-  is_correct: false
-)
-option16.save
 
 question5 = Question.new(
   question: "Lequel de ces nombres est un nombre premier ?",

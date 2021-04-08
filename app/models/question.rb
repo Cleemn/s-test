@@ -4,6 +4,8 @@ class Question < ApplicationRecord
   has_many :answers
   validate :validate_quota
 
+  private
+
   def validate_quota
     self.quiz.questions.count < 3 === true
     errors.add("Too many questions") if quiz.questions.count >= 3
