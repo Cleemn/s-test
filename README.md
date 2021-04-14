@@ -89,3 +89,11 @@ $ rails s
  [ ] A user can come back to a started quizz at the question he stopped
 
  [ ] Add or improve a feature of your own choice
+
+ Documentation was good
+
+ Too much logic in controllers
+ Redirects in the model ? 
+ Front is quite OK
+
+ I don't understand all the equals, but it might be just me ? 

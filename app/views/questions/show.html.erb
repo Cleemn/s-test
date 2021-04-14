@@ -1,6 +1,7 @@
 <div class="m-4">
   <h3><%= @question.question %></h3>
   <%= simple_form_for :answer do |f| %>
+    // Again, why not where ? 
     <%= f.input :answer, collection: Option.all.select{ |o| o.question_id === @question.id }.map{ |r| r.answer }, as: :radio_buttons, :label => "Réponse", input_html: { required: true } %>
     <%= f.button :submit, value: 'Valider la réponse', class: "btn btn-primary" %>
   <% end %>

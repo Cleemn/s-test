@@ -31,6 +31,14 @@ p 'Generating questions'
 
 p 'Generating answers'
 
+# Is there another way ? 
+
+# e.g. q = Question.new(...)
+# init options with new
+# q.options = [array_of_options]
+# q.save
+# Could even add the quizz layer
+
 question1 = Question.new(
   question: 'Quelle est la racine carrée de 36 ?',
   quiz_id: 1
@@ -243,6 +251,7 @@ option41 = Option.new(
   is_correct: true
 )
 option41.save
+
 option42 = Option.new(
   answer: '2 ans',
   question_id: 7,

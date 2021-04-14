@@ -1,4 +1,5 @@
 <div class="d-flex flex-wrap">
+  // There should be a partial here
   <% @quizzes.each do |quiz| %>
     <% if quiz.questions.count > 0 %>
       <div class="p-4 m-4 shadow-sm bg-white rounded flex-grow-2">
@@ -11,10 +12,13 @@
           <% end %>
         <% end %>
         <ul class="list-group list-group-flush">
+        // Again, a partial here => https://guides.rubyonrails.org/layouts_and_rendering.html
           <% quiz.questions.each do |q| %>
             <li class="list-group-item">
               <%= q.question %>
                 <% if user_signed_in? %>
+                // Why not activerecord ? where(x, y)
+                // Even better calling something like q.user_answer(user)
                   <% @scores.each do |s| %>
                     <% if s.quiz_id === quiz.id && s.question_id === q.id %>
                       <p>Ma réponse : <strong><%= s.answer %></strong></p>
