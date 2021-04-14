@@ -9,6 +9,7 @@ class Question < ApplicationRecord
   private
 
   def validate_quota
+    # What does this equal? do?
     (quiz.questions.count < 3).equal?(true)
     errors.add('Too many questions') if quiz.questions.count >= 3
   end
